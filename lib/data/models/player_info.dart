@@ -113,25 +113,25 @@ class Stat {
   };
 }
 
-enum Fn { BATTING, BOWLING }
+enum Fn { bATTING, bOWLING }
 
-final fnValues = EnumValues({"batting": Fn.BATTING, "bowling": Fn.BOWLING});
+final fnValues = EnumValues({"batting": Fn.bATTING, "bowling": Fn.bOWLING});
 
-enum Matchtype { IPL, ODI, T20, TEST }
+enum Matchtype { iPL, oDI, t20, tEST }
 
 final matchtypeValues = EnumValues({
-  "ipl": Matchtype.IPL,
-  "odi": Matchtype.ODI,
-  "t20": Matchtype.T20,
-  "test": Matchtype.TEST,
+  "ipl": Matchtype.iPL,
+  "odi": Matchtype.oDI,
+  "t20": Matchtype.t20,
+  "test": Matchtype.tEST,
 });
 
-enum Value { EMPTY, THE_0, THE_00 }
+enum Value { eMPTY, tHE_0, tHE_00 }
 
 final valueValues = EnumValues({
-  " -/- ": Value.EMPTY,
-  " 0 ": Value.THE_0,
-  " 0.0 ": Value.THE_00,
+  " -/- ": Value.eMPTY,
+  " 0 ": Value.tHE_0,
+  " 0.0 ": Value.tHE_00,
 });
 
 class Info {

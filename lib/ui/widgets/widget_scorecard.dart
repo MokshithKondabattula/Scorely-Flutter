@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Text(
                       scorecard1!.status,
                       style: TextStyle(
-                        color: scorecard1!.matchWinner != null
+                        color: scorecard1!.matchWinner.isEmpty
                             ? Colors.blueGrey
                             : Colors.red,
                         fontWeight: FontWeight.bold,

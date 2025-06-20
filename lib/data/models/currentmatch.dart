@@ -112,11 +112,11 @@ class Datum {
   };
 }
 
-enum MatchType { T20, TEST }
+enum MatchType { t20, tEST }
 
 final matchTypeValues = EnumValues({
-  "t20": MatchType.T20,
-  "test": MatchType.TEST,
+  "t20": MatchType.t20,
+  "test": MatchType.tEST,
 });
 
 class Score {

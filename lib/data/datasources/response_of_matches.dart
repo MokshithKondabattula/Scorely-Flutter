@@ -11,6 +11,7 @@ class MatchRes {
   static String abc =
       'https://api.cricapi.com/v1/currentMatches?apikey=${Apikey.apikey}&offset=0';
   static List<Datum>? data1;
+
   Future<List<Datum>?> getData() async {
     bool inter = false;
 

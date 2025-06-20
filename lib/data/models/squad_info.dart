@@ -100,20 +100,20 @@ class Player {
   };
 }
 
-enum BattingStyle { LEFT_HANDED_BAT, RIGHT_HANDED_BAT }
+enum BattingStyle { lefthandedbat, righthandedbat }
 
 final battingStyleValues = EnumValues({
-  "Left Handed Bat": BattingStyle.LEFT_HANDED_BAT,
-  "Right Handed Bat": BattingStyle.RIGHT_HANDED_BAT,
+  "Left Handed Bat": BattingStyle.lefthandedbat,
+  "Right Handed Bat": BattingStyle.righthandedbat,
 });
 
-enum Country { ENGLAND, NETHERLANDS, NEW_ZEALAND, SOUTH_AFRICA }
+enum Country { eNGLAND, nETHERLANDS, nEWZEALAND, sOUTHAFRICA }
 
 final countryValues = EnumValues({
-  "England": Country.ENGLAND,
-  "Netherlands": Country.NETHERLANDS,
-  "New Zealand": Country.NEW_ZEALAND,
-  "South Africa": Country.SOUTH_AFRICA,
+  "England": Country.eNGLAND,
+  "Netherlands": Country.nETHERLANDS,
+  "New Zealand": Country.nEWZEALAND,
+  "South Africa": Country.eNGLAND,
 });
 
 class Info {

@@ -123,13 +123,14 @@ class Score {
   double o;
   String inning;
 
-  var rR;
+  int rR;
 
   Score({
     required this.r,
     required this.w,
     required this.o,
     required this.inning,
+    required this.rR,
   });
 
   factory Score.fromJson(Map<String, dynamic> json) => Score(
@@ -137,6 +138,7 @@ class Score {
     w: json["w"],
     o: json["o"]?.toDouble(),
     inning: json["inning"],
+    rR: json['rR'],
   );
 
   Map<String, dynamic> toJson() => {"r": r, "w": w, "o": o, "inning": inning};
@@ -253,12 +255,12 @@ class Batsman {
   Map<String, dynamic> toJson() => {"id": id, "name": name};
 }
 
-enum Dismissal { BOWLED, CATCH, LBW }
+enum Dismissal { bOWLED, cATCH, lBW }
 
 final dismissalValues = EnumValues({
-  "bowled": Dismissal.BOWLED,
-  "catch": Dismissal.CATCH,
-  "lbw": Dismissal.LBW,
+  "bowled": Dismissal.bOWLED,
+  "catch": Dismissal.cATCH,
+  "lbw": Dismissal.lBW,
 });
 
 class Bowling {

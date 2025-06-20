@@ -21,6 +21,7 @@ dependencies:
   connectivity_plus: ^6.1.4
   fluttertoast: ^8.2.12
   sticky_headers: ^0.3.0+2
+  logger: ^2.0.2
  
   # UI enhancements
   cached_network_image: ^3.4.1

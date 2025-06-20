@@ -192,16 +192,16 @@ class TeamInfo {
   };
 }
 
-enum Team { BANGLADESH, SRI_LANKA }
+enum Team { bANGLADESH, srilanka }
 
 final teamValues = EnumValues({
-  "Bangladesh": Team.BANGLADESH,
-  "Sri Lanka": Team.SRI_LANKA,
+  "Bangladesh": Team.bANGLADESH,
+  "Sri Lanka": Team.srilanka,
 });
 
-enum Shortname { BAN, SL }
+enum Shortname { bAN, sL }
 
-final shortnameValues = EnumValues({"BAN": Shortname.BAN, "SL": Shortname.SL});
+final shortnameValues = EnumValues({"BAN": Shortname.bAN, "SL": Shortname.sL});
 
 class SeriesInfoInfo {
   int hitsToday;

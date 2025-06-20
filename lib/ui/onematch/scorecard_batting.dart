@@ -43,7 +43,6 @@ class _ScorecardBatting extends State<ScorecardBatting> {
             physics: const NeverScrollableScrollPhysics(),
             itemCount: battingList.length,
             itemBuilder: (context, index) {
-              final batsmen = battingList[index];
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -154,10 +153,7 @@ class _ScorecardBatting extends State<ScorecardBatting> {
                 ' (${totals.o} Overs,',
                 style: const TextStyle(fontSize: 17),
               ),
-              Text(
-                ' RR: ${totals.rR ?? '-'} )',
-                style: const TextStyle(fontSize: 17),
-              ),
+              Text(' RR: ${totals.rR} )', style: const TextStyle(fontSize: 17)),
             ],
           ),
         ],

@@ -1,4 +1,5 @@
 import 'package:http/http.dart' as http;
+import 'package:logger/logger.dart';
 import 'dart:convert';
 import 'package:scorely/data/models/response.dart';
 import 'package:scorely/utils/apikey.dart';
@@ -6,6 +7,8 @@ import 'package:scorely/utils/apikey.dart';
 class RemoteService {
   static const String _url =
       'https://api.cricapi.com/v1/series?apikey=${Apikey.apikey}&offset=0';
+
+  final Logger _logger = Logger(); // ✅ Logger instance
 
   Future<List<Data>> getData() async {
     try {
@@ -19,7 +22,7 @@ class RemoteService {
         throw Exception('Failed to fetch data');
       }
     } catch (e) {
-      print('Error fetching data: $e');
+      _logger.e('Error fetching data', error: e); // ✅ Replaced print
       return [];
     }
   }
@@ -35,7 +38,7 @@ class RemoteService {
         return null;
       }
     } catch (e) {
-      print('Error getting status: $e');
+      _logger.e('Error getting status', error: e); // ✅ Replaced print
       return null;
     }
   }
