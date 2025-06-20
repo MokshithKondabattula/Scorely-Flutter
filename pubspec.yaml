@@ -1,0 +1,50 @@
+name: scorely
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management & utilities
+  flutter_riverpod: ^2.6.1
+  http: ^1.4.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  shared_preferences: ^2.5.3
+  intl: ^0.20.2
+  routemaster: ^1.0.1
+  connectivity_plus: ^6.1.4
+  fluttertoast: ^8.2.12
+  sticky_headers: ^0.3.0+2
+ 
+  # UI enhancements
+  cached_network_image: ^3.4.1
+  animations: ^2.0.11
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+  
+  flutter_native_splash: ^2.4.6
+
+
+flutter_native_splash:
+  color: "#0087FF"
+  image: assets/splash_screen_logo.png
+ 
+  android: true
+  ios: true
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/default.png
