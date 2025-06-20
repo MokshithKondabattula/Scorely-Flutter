@@ -13,10 +13,10 @@ class ScorecardBatting extends StatefulWidget {
   });
 
   @override
-  State<ScorecardBatting> createState() => _BattingLstState();
+  State<ScorecardBatting> createState() => _ScorecardBatting();
 }
 
-class _BattingLstState extends State<ScorecardBatting> {
+class _ScorecardBatting extends State<ScorecardBatting> {
   late scorecard.Data scorecard1;
   late int i;
 
@@ -43,7 +43,7 @@ class _BattingLstState extends State<ScorecardBatting> {
             physics: const NeverScrollableScrollPhysics(),
             itemCount: battingList.length,
             itemBuilder: (context, index) {
-              final batter = battingList[index];
+              final batsmen = battingList[index];
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
