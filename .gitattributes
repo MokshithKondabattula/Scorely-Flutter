@@ -1,8 +1,0 @@
-# Ignore build directory (often contains generated HTML/JS)
-build/** linguist-vendored
-
-# Ignore web/index.html if needed
-web/index.html linguist-generated
-
-# Ignore all HTML files in web folder
-web/*.html linguist-generated
