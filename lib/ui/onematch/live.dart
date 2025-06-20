@@ -201,10 +201,10 @@ class _LiveScoreState extends State<LiveScore> {
 }
 
 class ListViewScore extends StatefulWidget {
-  scorecard.Data score;
-  int i;
-  int inde;
-  ListViewScore({
+  final scorecard.Data score;
+  final int i;
+  final int inde;
+  const ListViewScore({
     super.key,
     required this.score,
     required this.i,
