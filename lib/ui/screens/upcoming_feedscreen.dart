@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:scorely/data/models/response.dart';
 import 'package:scorely/data/datasources/remote_api.dart';
+import 'package:scorely/core/loading_indicator.dart';
 import 'package:scorely/utils/date_time_utils.dart' as custom_utils;
+import 'package:scorely/ui/widgets/error_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -28,20 +30,14 @@ class HomePage extends StatelessWidget {
         future: _fetchData(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
-              child: CircularProgressIndicator(
-                color: Color(0xFF0087FF),
-                strokeWidth: 4.0,
-              ),
-            );
+            return const Center(child: LoadingIndicator());
           }
 
           if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
+            return CustomErrorWidget(error: snapshot.error.toString());
           }
 
           final seriesList = snapshot.data ?? [];
-
           if (seriesList.isEmpty) {
             return const Center(
               child: Text("No data available!", style: TextStyle(fontSize: 14)),

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:scorely/core/loading_indicator.dart';
 import 'package:scorely/data/models/currentmatch.dart';
 import 'package:scorely/data/datasources/connectivity.dart';
 import 'package:scorely/data/datasources/score.dart';
@@ -75,7 +76,7 @@ class _MatchState extends State<Match> {
                   child: SizedBox(
                     width: 35,
                     height: 35,
-                    child: CircularProgressIndicator(color: Color(0xFF0087FF)),
+                    child: LoadingIndicator(),
                   ),
                 ),
         ),
