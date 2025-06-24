@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:scorely/data/models/matchview.dart';
+import 'package:scorely/dataLayer/models/matchview.dart';
 import 'package:scorely/utils/apikey.dart';
 import 'package:http/http.dart' as http;
 

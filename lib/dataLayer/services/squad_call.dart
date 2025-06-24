@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:scorely/data/models/squad_info.dart';
+import 'package:scorely/dataLayer/models/squad_info.dart';
 import 'package:scorely/utils/apikey.dart';
 
 class Players {

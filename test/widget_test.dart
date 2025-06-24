@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:scorely/ui/screens/splash_screen.dart';
+import 'package:scorely/uiLayer/screens/splash_screen.dart';
 
 void main() {
   testWidgets('Shows splash screen initially', (WidgetTester tester) async {

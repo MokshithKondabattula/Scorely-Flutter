@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 import 'dart:convert';
-import 'package:scorely/data/models/response.dart';
+import 'package:scorely/dataLayer/models/response.dart';
 import 'package:scorely/utils/apikey.dart';
 
 class RemoteService {

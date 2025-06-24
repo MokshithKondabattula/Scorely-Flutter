@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scorely/ui/screens/upcoming_feedscreen.dart';
+import 'package:scorely/uiLayer/screens/upcoming_feedscreen.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});

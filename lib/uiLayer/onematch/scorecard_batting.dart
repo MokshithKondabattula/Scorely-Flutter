@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:scorely/data/models/scorecard.dart' as scorecard;
-import 'package:scorely/ui/onematch/live.dart';
+import 'package:scorely/dataLayer/models/scorecard.dart' as scorecard;
+import 'package:scorely/uiLayer/onematch/live.dart';
 
 class ScorecardBatting extends StatefulWidget {
   final scorecard.Data scorecard1;

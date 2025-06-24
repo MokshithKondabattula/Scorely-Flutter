@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:scorely/data/datasources/detail.dart';
-import 'package:scorely/data/models/scorecard.dart' as scorecard;
-import 'package:scorely/ui/onematch/scorecard_batting.dart';
+import 'package:scorely/dataLayer/services/detail.dart';
+import 'package:scorely/dataLayer/models/scorecard.dart' as scorecard;
+import 'package:scorely/uiLayer/onematch/scorecard_batting.dart';
 
 class LiveScore extends StatefulWidget {
   final String id;

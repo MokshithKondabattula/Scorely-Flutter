@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scorely/data/models/currentmatch.dart';
+import 'package:scorely/dataLayer/models/currentmatch.dart';
 
 class MatchScore {
   Widget getScore(List<Score>? scores, String teamShortName) {

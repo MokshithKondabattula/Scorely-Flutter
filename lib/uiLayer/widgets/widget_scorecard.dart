@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sticky_headers/sticky_headers.dart';
-import 'package:scorely/data/datasources/detail.dart';
-import 'package:scorely/data/datasources/single_team.dart';
-import 'package:scorely/data/models/scorecard.dart' as scorecard;
-import 'package:scorely/ui/onematch/scorecard_batting.dart';
+import 'package:scorely/dataLayer/services/detail.dart';
+import 'package:scorely/dataLayer/services/single_team.dart';
+import 'package:scorely/dataLayer/models/scorecard.dart' as scorecard;
+import 'package:scorely/uiLayer/onematch/scorecard_batting.dart';
 
 class MyHomePage extends StatefulWidget {
   final String id;

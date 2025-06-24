@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:scorely/ui/featured/match_current.dart';
-import 'package:scorely/ui/screens/upcoming_feedscreen.dart';
-import 'package:scorely/ui/screens/splash_screen.dart';
-import 'package:scorely/ui/screens/tab_screen.dart'; // If used somewhere
+import 'package:scorely/uiLayer/featured/match_current.dart';
+import 'package:scorely/uiLayer/screens/upcoming_feedscreen.dart';
+import 'package:scorely/uiLayer/screens/splash_screen.dart';
+import 'package:scorely/uiLayer/screens/tab_screen.dart'; // If used somewhere
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(

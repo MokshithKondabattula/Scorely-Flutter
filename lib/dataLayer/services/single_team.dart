@@ -1,4 +1,4 @@
-import 'package:scorely/data/models/scorecard.dart' as scorecard;
+import 'package:scorely/dataLayer/models/scorecard.dart' as scorecard;
 
 class TeamName {
   String getTeamName(scorecard.Data? scorecard, int i) {

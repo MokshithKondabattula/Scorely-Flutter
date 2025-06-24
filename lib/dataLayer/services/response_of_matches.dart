@@ -1,5 +1,5 @@
-import 'package:scorely/data/datasources/connectivity.dart';
-import 'package:scorely/data/models/currentmatch.dart';
+import 'package:scorely/dataLayer/services/connectivity.dart';
+import 'package:scorely/dataLayer/models/currentmatch.dart';
 import 'package:scorely/utils/apikey.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';

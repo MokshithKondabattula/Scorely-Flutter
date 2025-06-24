@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:scorely/ui/featured/match_current.dart';
-import 'package:scorely/ui/screens/upcoming_feedscreen.dart';
+import 'package:scorely/uiLayer/featured/match_current.dart';
+import 'package:scorely/uiLayer/screens/upcoming_feedscreen.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});

@@ -2,11 +2,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:scorely/core/loading_indicator.dart';
-import 'package:scorely/data/models/currentmatch.dart';
-import 'package:scorely/data/datasources/connectivity.dart';
-import 'package:scorely/data/datasources/score.dart';
-import 'package:scorely/data/datasources/response_of_matches.dart';
-import 'package:scorely/ui/onematch/onematch_detail_view.dart';
+import 'package:scorely/dataLayer/models/currentmatch.dart';
+import 'package:scorely/dataLayer/services/connectivity.dart';
+import 'package:scorely/dataLayer/services/score.dart';
+import 'package:scorely/dataLayer/services/response_of_matches.dart';
+import 'package:scorely/uiLayer/onematch/onematch_detail_view.dart';
 import 'package:scorely/utils/date_time_utils.dart' as custom_utils;
 
 const kPrimaryColor = Color(0xFF0087FF);

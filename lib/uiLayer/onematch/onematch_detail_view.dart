@@ -1,11 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-import 'package:scorely/data/datasources/detail.dart';
-import 'package:scorely/data/datasources/squad_call.dart';
-import 'package:scorely/ui/onematch/info.dart';
-import 'package:scorely/ui/onematch/live.dart';
-import 'package:scorely/ui/widgets/widget_scorecard.dart';
+import 'package:scorely/dataLayer/services/detail.dart';
+import 'package:scorely/dataLayer/services/squad_call.dart';
+import 'package:scorely/uiLayer/onematch/info.dart';
+import 'package:scorely/uiLayer/onematch/live.dart';
+import 'package:scorely/uiLayer/widgets/widget_scorecard.dart';
 
 class DetailPage extends StatefulWidget {
   final String id;

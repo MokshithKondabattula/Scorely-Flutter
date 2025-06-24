@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:scorely/data/datasources/squad_call.dart';
-import 'package:scorely/data/datasources/detail.dart';
+import 'package:scorely/dataLayer/services/squad_call.dart';
+import 'package:scorely/dataLayer/services/detail.dart';
 
 class Info extends StatefulWidget {
   final String id;
