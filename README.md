@@ -34,6 +34,6 @@ Type: RESTful API
 
 Framework: Flutter (Cross-platform SDK)
 
-Custom date/time formatter
+Language: Dart
 
 Navigation: navigator: v1.1.1
