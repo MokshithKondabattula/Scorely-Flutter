@@ -144,7 +144,7 @@ class ListItem extends StatelessWidget {
                 );
               },
               child: Card(
-                color: Color(0xFFE6F0FF),
+                color: const Color(0xFFE9F3FF),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),

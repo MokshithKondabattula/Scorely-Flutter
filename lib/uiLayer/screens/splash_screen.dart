@@ -51,12 +51,12 @@ class _SplashViewState extends State<SplashView>
 
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 3200),
+      duration: const Duration(milliseconds: 3000),
     );
 
     _fadeAnimation = Tween<double>(
       begin: 0.0,
-      end: 1.6,
+      end: 1.3,
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeIn));
 
     _controller.forward();
@@ -78,7 +78,7 @@ class _SplashViewState extends State<SplashView>
           child: Image.asset(
             'assets/splash_screen_logo.png',
             width: 130,
-            height: 130,
+            height: 140,
 
             colorBlendMode: BlendMode.srcIn,
           ),

@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
 class Internet {
@@ -5,17 +6,14 @@ class Internet {
     try {
       final connectivityResult = await Connectivity().checkConnectivity();
 
-      if ([
-        ConnectivityResult.mobile,
-        // ignore: collection_methods_unrelated_type
-        ConnectivityResult.wifi,
-        // ignore: collection_methods_unrelated_type
-      ].contains(connectivityResult)) {
-        return true;
-      } else {
-        return false;
+      if (connectivityResult.contains(ConnectivityResult.mobile) ||
+          connectivityResult.contains(ConnectivityResult.wifi)) {
+        final result = await InternetAddress.lookup('google.com');
+        return result.isNotEmpty && result[0].rawAddress.isNotEmpty;
       }
-    } catch (e) {
+
+      return false;
+    } catch (_) {
       return false;
     }
   }

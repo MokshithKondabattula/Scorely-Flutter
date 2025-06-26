@@ -7,31 +7,52 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class MatchRes {
-  String apikey = 'ca6d9c60-b411-456d-bced-acc4b8fd3d2a';
-  static String abc =
+  static final String _endpoint =
       'https://api.cricapi.com/v1/currentMatches?apikey=${Apikey.apikey}&offset=0';
   static List<Datum>? data1;
 
   Future<List<Datum>?> getData() async {
-    bool inter = false;
+    bool isConnected = await Internet.checkInternet();
 
-    inter = await Internet.checkInternet();
-
-    if (inter == true) {
-      var resp = await http.get(Uri.parse(abc));
-      var mapd = json.decode(resp.body);
-
-      if (resp.statusCode == 200) {
-        data1 = CurrentMatch.fromJson(mapd).data;
-        return data1;
-      } else {
-        return data1;
-      }
-    } else {
+    if (!isConnected) {
       Fluttertoast.showToast(
-        msg: 'You are currently offline ',
-        textColor: Colors.blueGrey,
-        backgroundColor: Colors.white,
+        msg: 'You are currently offline',
+        textColor: Colors.white,
+        backgroundColor: Colors.redAccent,
+      );
+      return [];
+    }
+
+    try {
+      final response = await http.get(Uri.parse(_endpoint));
+
+      if (response.statusCode == 200) {
+        final mapd = json.decode(response.body);
+
+        if (mapd['status'] == 'success') {
+          data1 = CurrentMatch.fromJson(mapd).data;
+          return data1;
+        } else {
+          Fluttertoast.showToast(
+            msg: 'API Error: ${mapd['message'] ?? 'Invalid response'}',
+            textColor: Colors.white,
+            backgroundColor: Colors.red,
+          );
+          return [];
+        }
+      } else {
+        Fluttertoast.showToast(
+          msg: 'Server Error: ${response.statusCode}',
+          textColor: Colors.white,
+          backgroundColor: Colors.red,
+        );
+        return [];
+      }
+    } catch (e) {
+      Fluttertoast.showToast(
+        msg: 'Something went wrong: $e',
+        textColor: Colors.white,
+        backgroundColor: Colors.red,
       );
       return [];
     }

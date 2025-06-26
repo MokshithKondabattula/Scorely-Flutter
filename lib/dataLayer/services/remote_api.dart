@@ -8,7 +8,7 @@ class RemoteService {
   static const String _url =
       'https://api.cricapi.com/v1/series?apikey=${Apikey.apikey}&offset=0';
 
-  final Logger _logger = Logger(); // ✅ Logger instance
+  final Logger _logger = Logger();
 
   Future<List<Data>> getData() async {
     try {
@@ -22,7 +22,7 @@ class RemoteService {
         throw Exception('Failed to fetch data');
       }
     } catch (e) {
-      _logger.e('Error fetching data', error: e); // ✅ Replaced print
+      _logger.e('Error fetching data', error: e);
       return [];
     }
   }
@@ -38,7 +38,7 @@ class RemoteService {
         return null;
       }
     } catch (e) {
-      _logger.e('Error getting status', error: e); // ✅ Replaced print
+      _logger.e('Error getting status', error: {e});
       return null;
     }
   }
