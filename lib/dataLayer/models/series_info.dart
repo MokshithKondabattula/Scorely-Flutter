@@ -1,3 +1,7 @@
+// To parse this JSON data, do
+//
+//     final seriesInfo = seriesInfoFromJson(jsonString);
+
 import 'dart:convert';
 
 SeriesInfo seriesInfoFromJson(String str) =>
@@ -7,9 +11,9 @@ String seriesInfoToJson(SeriesInfo data) => json.encode(data.toJson());
 
 class SeriesInfo {
   String apikey;
-  Data data;
+  List<Datum> data;
   String status;
-  SeriesInfoInfo info;
+  Info info;
 
   SeriesInfo({
     required this.apikey,
@@ -20,190 +24,96 @@ class SeriesInfo {
 
   factory SeriesInfo.fromJson(Map<String, dynamic> json) => SeriesInfo(
     apikey: json["apikey"],
-    data: Data.fromJson(json["data"]),
+    data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
     status: json["status"],
-    info: SeriesInfoInfo.fromJson(json["info"]),
+    info: Info.fromJson(json["info"]),
   );
 
   Map<String, dynamic> toJson() => {
     "apikey": apikey,
-    "data": data.toJson(),
+    "data": List<dynamic>.from(data.map((x) => x.toJson())),
     "status": status,
     "info": info.toJson(),
   };
 }
 
-class Data {
-  DataInfo info;
-  List<MatchList> matchList;
-
-  Data({required this.info, required this.matchList});
-
-  factory Data.fromJson(Map<String, dynamic> json) => Data(
-    info: DataInfo.fromJson(json["info"]),
-    matchList: List<MatchList>.from(
-      json["matchList"].map((x) => MatchList.fromJson(x)),
-    ),
-  );
-
-  Map<String, dynamic> toJson() => {
-    "info": info.toJson(),
-    "matchList": List<dynamic>.from(matchList.map((x) => x.toJson())),
-  };
-}
-
-class DataInfo {
+class Datum {
   String id;
-  String name;
-  DateTime startdate;
-  String enddate;
-  int odi;
-  int t20;
-  int test;
-  int squads;
-  int matches;
-
-  DataInfo({
-    required this.id,
-    required this.name,
-    required this.startdate,
-    required this.enddate,
-    required this.odi,
-    required this.t20,
-    required this.test,
-    required this.squads,
-    required this.matches,
-  });
-
-  factory DataInfo.fromJson(Map<String, dynamic> json) => DataInfo(
-    id: json["id"],
-    name: json["name"],
-    startdate: DateTime.parse(json["startdate"]),
-    enddate: json["enddate"],
-    odi: json["odi"],
-    t20: json["t20"],
-    test: json["test"],
-    squads: json["squads"],
-    matches: json["matches"],
-  );
-
-  Map<String, dynamic> toJson() => {
-    "id": id,
-    "name": name,
-    "startdate":
-        "${startdate.year.toString().padLeft(4, '0')}-${startdate.month.toString().padLeft(2, '0')}-${startdate.day.toString().padLeft(2, '0')}",
-    "enddate": enddate,
-    "odi": odi,
-    "t20": t20,
-    "test": test,
-    "squads": squads,
-    "matches": matches,
-  };
-}
-
-class MatchList {
-  String id;
-  String name;
-  String matchType;
-  String status;
-  String venue;
-  DateTime date;
   DateTime dateTimeGmt;
-  List<Team> teams;
-  List<TeamInfo> teamInfo;
-  bool fantasyEnabled;
-  bool bbbEnabled;
-  bool hasSquad;
-  bool matchStarted;
-  bool matchEnded;
+  MatchType matchType;
+  String status;
+  Ms ms;
+  String t1;
+  String t2;
+  String t1S;
+  String t2S;
+  String series;
+  String? t1Img;
+  String? t2Img;
 
-  MatchList({
+  Datum({
     required this.id,
-    required this.name,
+    required this.dateTimeGmt,
     required this.matchType,
     required this.status,
-    required this.venue,
-    required this.date,
-    required this.dateTimeGmt,
-    required this.teams,
-    required this.teamInfo,
-    required this.fantasyEnabled,
-    required this.bbbEnabled,
-    required this.hasSquad,
-    required this.matchStarted,
-    required this.matchEnded,
+    required this.ms,
+    required this.t1,
+    required this.t2,
+    required this.t1S,
+    required this.t2S,
+    required this.series,
+    this.t1Img,
+    this.t2Img,
   });
 
-  factory MatchList.fromJson(Map<String, dynamic> json) => MatchList(
+  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
     id: json["id"],
-    name: json["name"],
-    matchType: json["matchType"],
-    status: json["status"],
-    venue: json["venue"],
-    date: DateTime.parse(json["date"]),
     dateTimeGmt: DateTime.parse(json["dateTimeGMT"]),
-    teams: List<Team>.from(json["teams"].map((x) => teamValues.map[x]!)),
-    teamInfo: List<TeamInfo>.from(
-      json["teamInfo"].map((x) => TeamInfo.fromJson(x)),
-    ),
-    fantasyEnabled: json["fantasyEnabled"],
-    bbbEnabled: json["bbbEnabled"],
-    hasSquad: json["hasSquad"],
-    matchStarted: json["matchStarted"],
-    matchEnded: json["matchEnded"],
+    matchType: matchTypeValues.map[json["matchType"]]!,
+    status: json["status"],
+    ms: msValues.map[json["ms"]]!,
+    t1: json["t1"],
+    t2: json["t2"],
+    t1S: json["t1s"],
+    t2S: json["t2s"],
+    series: json["series"],
+    t1Img: json["t1img"],
+    t2Img: json["t2img"],
   );
 
   Map<String, dynamic> toJson() => {
     "id": id,
-    "name": name,
-    "matchType": matchType,
-    "status": status,
-    "venue": venue,
-    "date":
-        "${date.year.toString().padLeft(4, '0')}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}",
     "dateTimeGMT": dateTimeGmt.toIso8601String(),
-    "teams": List<dynamic>.from(teams.map((x) => teamValues.reverse[x])),
-    "teamInfo": List<dynamic>.from(teamInfo.map((x) => x.toJson())),
-    "fantasyEnabled": fantasyEnabled,
-    "bbbEnabled": bbbEnabled,
-    "hasSquad": hasSquad,
-    "matchStarted": matchStarted,
-    "matchEnded": matchEnded,
+    "matchType": matchTypeValues.reverse[matchType],
+    "status": status,
+    "ms": msValues.reverse[ms],
+    "t1": t1,
+    "t2": t2,
+    "t1s": t1S,
+    "t2s": t2S,
+    "series": series,
+    "t1img": t1Img,
+    "t2img": t2Img,
   };
 }
 
-class TeamInfo {
-  Team name;
-  Shortname shortname;
-  String img;
+enum MatchType { oDI, t20, tEST }
 
-  TeamInfo({required this.name, required this.shortname, required this.img});
-
-  factory TeamInfo.fromJson(Map<String, dynamic> json) => TeamInfo(
-    name: teamValues.map[json["name"]]!,
-    shortname: shortnameValues.map[json["shortname"]]!,
-    img: json["img"],
-  );
-
-  Map<String, dynamic> toJson() => {
-    "name": teamValues.reverse[name],
-    "shortname": shortnameValues.reverse[shortname],
-    "img": img,
-  };
-}
-
-enum Team { bANGLADESH, srilanka }
-
-final teamValues = EnumValues({
-  "Bangladesh": Team.bANGLADESH,
-  "Sri Lanka": Team.srilanka,
+final matchTypeValues = EnumValues({
+  "odi": MatchType.oDI,
+  "t20": MatchType.t20,
+  "test": MatchType.tEST,
 });
 
-enum Shortname { bAN, sL }
+enum Ms { fixture, lIVE, rESULT }
 
-final shortnameValues = EnumValues({"BAN": Shortname.bAN, "SL": Shortname.sL});
+final msValues = EnumValues({
+  "fixture": Ms.fixture,
+  "live": Ms.lIVE,
+  "result": Ms.rESULT,
+});
 
-class SeriesInfoInfo {
+class Info {
   int hitsToday;
   int hitsUsed;
   int hitsLimit;
@@ -211,9 +121,8 @@ class SeriesInfoInfo {
   int server;
   double queryTime;
   int s;
-  int cache;
 
-  SeriesInfoInfo({
+  Info({
     required this.hitsToday,
     required this.hitsUsed,
     required this.hitsLimit,
@@ -221,10 +130,9 @@ class SeriesInfoInfo {
     required this.server,
     required this.queryTime,
     required this.s,
-    required this.cache,
   });
 
-  factory SeriesInfoInfo.fromJson(Map<String, dynamic> json) => SeriesInfoInfo(
+  factory Info.fromJson(Map<String, dynamic> json) => Info(
     hitsToday: json["hitsToday"],
     hitsUsed: json["hitsUsed"],
     hitsLimit: json["hitsLimit"],
@@ -232,7 +140,6 @@ class SeriesInfoInfo {
     server: json["server"],
     queryTime: json["queryTime"]?.toDouble(),
     s: json["s"],
-    cache: json["cache"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -243,7 +150,6 @@ class SeriesInfoInfo {
     "server": server,
     "queryTime": queryTime,
     "s": s,
-    "cache": cache,
   };
 }
 
