@@ -12,19 +12,19 @@
 
 ## Screenshots
 
-- *Splash Screen*
+- Splash Screen </br>
   <img src="screenshots/splashscreen.png"  alt="Splash Screen" width="310" height="660"/>
 
-- *Featured Tab (Mobile View)* 
+- Featured Tab (Mobile View) </br>
   <img src="screenshots/Featured_tab.png" alt="Featured Tab" width="310" height="660"/>
 
-- *Upcoming Feed (Mobile View)* 
+- Upcoming Feed (Mobile View) </br>
   <img src="screenshots/upcoming_tab.png" alt="Upcoming Feed" width="310" height="660"/>
 
-- *Flutter Web UI – Featured Tab*
+- Flutter Web UI – Featured Tab </br>
   <img src="screenshots/Web_featured.png" alt="Flutter Web UI (Featured)" width="1200" height="675"/>
 
-- *Flutter Web UI – Upcoming Feed*
+- Flutter Web UI – Upcoming Feed </br>
   <img src="screenshots/Web_upcoming.png" alt="Flutter Web UI (Upcoming Feed)" width="1200" height="675"/>
 
 ## Backend Infrastructure
