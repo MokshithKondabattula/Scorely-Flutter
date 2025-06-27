@@ -1,6 +1,6 @@
 ## Scorely - Live Cricket Score App
 
- Scorely is a Flutter-based mobile application that aims to provide cricket enthusiasts with real-time cricket match scores, detailed match info and upcoming series list.
+ Scorely is a Flutter-based mobile application that aims to provide cricket fanatics with real-time cricket match scores, detailed match info and upcoming series list.
 
 ## Features
 
