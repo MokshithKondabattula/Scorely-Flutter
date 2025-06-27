@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scorely/core/loading_indicator.dart';
 import 'package:scorely/uiLayer/screens/upcoming_feedscreen.dart';
 
 class MyApp extends StatefulWidget {
@@ -14,7 +15,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(milliseconds: 2200), () {
       setState(() => _showHome = true);
     });
   }
@@ -43,7 +44,7 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
-  late final Animation<double> _fadeAnimation;
+  late final Animation<double> _scaleAnimation;
 
   @override
   void initState() {
@@ -51,13 +52,13 @@ class _SplashViewState extends State<SplashView>
 
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 3000),
+      duration: const Duration(milliseconds: 1500),
     );
 
-    _fadeAnimation = Tween<double>(
+    _scaleAnimation = Tween<double>(
       begin: 0.0,
-      end: 1.3,
-    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeIn));
+      end: 1.0,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOutBack));
 
     _controller.forward();
   }
@@ -73,15 +74,20 @@ class _SplashViewState extends State<SplashView>
     return Scaffold(
       backgroundColor: const Color(0xFF0087FF),
       body: Center(
-        child: FadeTransition(
-          opacity: _fadeAnimation,
-          child: Image.asset(
-            'assets/splash_screen_logo.png',
-            width: 130,
-            height: 140,
-
-            colorBlendMode: BlendMode.srcIn,
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ScaleTransition(
+              scale: _scaleAnimation,
+              child: Image.asset(
+                'assets/splash_screen_logo.png',
+                width: 140,
+                height: 150,
+              ),
+            ),
+            const SizedBox(height: 1),
+            LoadingIndicator(color: Colors.white, strokeWidth: 4.0),
+          ],
         ),
       ),
     );

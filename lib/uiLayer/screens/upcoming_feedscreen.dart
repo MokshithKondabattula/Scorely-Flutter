@@ -30,7 +30,12 @@ class HomePage extends StatelessWidget {
         future: _fetchData(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: LoadingIndicator());
+            return const Center(
+              child: LoadingIndicator(
+                color: Color(0xFF0087FF),
+                strokeWidth: 4.0,
+              ),
+            );
           }
 
           if (snapshot.hasError) {

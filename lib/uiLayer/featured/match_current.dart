@@ -76,7 +76,10 @@ class _MatchState extends State<Match> {
                   child: SizedBox(
                     width: 35,
                     height: 35,
-                    child: LoadingIndicator(),
+                    child: LoadingIndicator(
+                      color: Color(0xFF0087FF),
+                      strokeWidth: 4.0,
+                    ),
                   ),
                 ),
         ),
