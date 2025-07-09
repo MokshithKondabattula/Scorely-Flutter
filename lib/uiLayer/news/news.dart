@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:scorely/dataLayer/models/news_items.dart';
-import 'package:scorely/dataLayer/services/news_services.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:scorely/domain/services/news_services.dart';
 
 class News extends StatefulWidget {
   const News({super.key});
@@ -13,17 +12,6 @@ class News extends StatefulWidget {
 }
 
 class _NewsState extends State<News> {
-  void _launchURL(String url) async {
-    final uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
-    } else {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('Could not open article')));
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
