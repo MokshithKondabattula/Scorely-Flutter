@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:scorely/dataLayer/services/detail.dart';
 import 'package:scorely/dataLayer/services/squad_call.dart';
@@ -46,9 +47,16 @@ class _DetailPageState extends State<DetailPage> {
                   '${teamInfo[0].shortname} vs ${teamInfo[1].shortname}',
                   style: const TextStyle(fontSize: 18),
                 )
-              : const Text('Match Details'),
+              : Text(
+                  'Match Details',
+                  style: GoogleFonts.poppins(
+                    color: Colors.white,
+                    fontSize: 19,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios),
+            icon: const Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
               setState(() {
                 DetailsRes.scorecard1 = null;
@@ -57,7 +65,7 @@ class _DetailPageState extends State<DetailPage> {
               Navigator.pop(context);
             },
           ),
-          bottom: const TabBar(
+          bottom: TabBar(
             indicatorColor: Colors.white,
             labelColor: Colors.white,
             unselectedLabelColor: Color(0xFFB3E5FC),
@@ -93,6 +101,7 @@ class _DetailPageState extends State<DetailPage> {
                   MyHomePage(id: widget.id),
                 ],
               ),
+        backgroundColor: Color(0xFFE6F0FF),
       ),
     );
   }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:scorely/core/common/widgets/bottom_navbar.dart';
 import 'package:scorely/uiLayer/featured/match_current.dart';
 import 'package:scorely/uiLayer/screens/upcoming_feedscreen.dart';
 import 'package:scorely/uiLayer/screens/splash_screen.dart';
-import 'package:scorely/uiLayer/screens/tab_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -43,10 +43,10 @@ class _MyAppState extends State<MyApp> {
         useMaterial3: true,
       ),
 
-      home: _showHome ? const Home() : const SplashView(),
+      home: _showHome ? const BottomNavbar() : const SplashView(),
 
       routes: {
-        '/home': (context) => const Home(),
+        '/home': (context) => const BottomNavbar(),
         '/series': (context) => const HomePage(),
         '/current': (context) => const Match(),
         '/splash': (context) => const SplashView(),

@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
         future: _fetchData(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
+            return Center(
               child: LoadingIndicator(
                 color: Color(0xFF0087FF),
                 strokeWidth: 4.0,
@@ -45,7 +45,14 @@ class HomePage extends StatelessWidget {
           final seriesList = snapshot.data ?? [];
           if (seriesList.isEmpty) {
             return const Center(
-              child: Text("No data available!", style: TextStyle(fontSize: 14)),
+              child: Text(
+                "No Data available at the Moment!",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black,
+                ),
+              ),
             );
           }
 
