@@ -40,13 +40,13 @@
 
 ## Backend Infrastructure
 
-# Match Data API
+### Match Data API
 
 API Used: CricAPI
 
 Type: RESTful API
 
-# News Feed
+### News Feed
 
 Source: ESPN Cricinfo Home RSS Feed
 
