@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scorely/dataLayer/models/response.dart';
-import 'package:scorely/dataLayer/services/remote_api.dart';
+import 'package:scorely/domain/services/remote_api.dart';
 import 'package:scorely/core/loading_indicator.dart';
 import 'package:scorely/utils/date_time_utils.dart' as custom_utils;
 import 'package:scorely/uiLayer/widgets/error_widget.dart';

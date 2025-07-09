@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:scorely/core/loading_indicator.dart';
 import 'package:scorely/dataLayer/models/currentmatch.dart';
-import 'package:scorely/dataLayer/services/connectivity.dart';
-import 'package:scorely/dataLayer/services/score.dart';
-import 'package:scorely/dataLayer/services/response_of_matches.dart';
+import 'package:scorely/domain/services/connectivity.dart';
+import 'package:scorely/domain/services/score.dart';
+import 'package:scorely/domain/services/response_of_matches.dart';
 import 'package:scorely/uiLayer/onematch/onematch_detail_view.dart';
 import 'package:scorely/utils/date_time_utils.dart' as custom_utils;
 

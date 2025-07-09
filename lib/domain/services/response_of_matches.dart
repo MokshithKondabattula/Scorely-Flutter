@@ -1,4 +1,4 @@
-import 'package:scorely/dataLayer/services/connectivity.dart';
+import 'package:scorely/domain/services/connectivity.dart';
 import 'package:scorely/dataLayer/models/currentmatch.dart';
 import 'package:scorely/utils/apikey.dart';
 import 'package:flutter/material.dart';

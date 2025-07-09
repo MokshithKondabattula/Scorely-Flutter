@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:scorely/dataLayer/services/detail.dart';
-import 'package:scorely/dataLayer/services/squad_call.dart';
+import 'package:scorely/domain/services/detail.dart';
+import 'package:scorely/domain/services/squad_call.dart';
 import 'package:scorely/uiLayer/onematch/info.dart';
 import 'package:scorely/uiLayer/onematch/live.dart';
 import 'package:scorely/uiLayer/widgets/widget_scorecard.dart';

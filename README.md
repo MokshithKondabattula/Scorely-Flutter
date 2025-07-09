@@ -21,11 +21,20 @@
 - Upcoming Feed (Mobile View) </br>
   <img src="screenshots/upcoming_tab.png" alt="Upcoming Feed" width="310" height="660"/>
 
+- News Feed (Mobile View) </br>
+  <img src="screenshots/NewsFeed_Mobile.png" alt="News Feed" width="310" height="660"/>
+
+- More Sections(Mobile View) </br>
+  <img src="screenshots/More_Sections_Mobile.png" alt="More Sections" width="310" height="660"/>
+
+- News Feed (Windows UI)   </br>
+  <img src="screenshots/Windows_NewsFeed.png" alt="News Feed Windows" style="max-width:100%; height:auto;" />
+
 - Flutter Windows UI – Featured Tab     </br>
-  <img src="screenshots/Web_featured.png" alt="Flutter Windows UI (Featured Tab)" style="max-width:100%; height:auto;" />
+  <img src="screenshots/Windows_featured.png" alt="Flutter Windows UI (Featured Tab)" style="max-width:100%; height:auto;" />
 
 - Flutter Windows UI – Upcoming Feed    </br>
-  <img src="screenshots/Web_upcoming.png" alt="Flutter Windows UI (Upcoming Feed)" style="max-width:100%; height:auto;" />
+  <img src="screenshots/Windows_upcoming.png" alt="Flutter Windows UI (Upcoming Feed)" style="max-width:100%; height:auto;" />
 
 ## Backend Infrastructure
 
