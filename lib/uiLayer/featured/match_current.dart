@@ -52,7 +52,7 @@ class _MatchState extends State<Match> {
   void initState() {
     super.initState();
     getD();
-    Timer.periodic(const Duration(minutes: 2), (_) => refresh());
+    Timer.periodic(const Duration(seconds: 10), (_) => refresh());
   }
 
   @override
