@@ -1,16 +1,16 @@
-name: Release APK
+name: Scorely Release
 
 on:
   push:
     tags:
-      - 'v*.*.*' 
+      - 'v*.*.*'
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up Flutter
