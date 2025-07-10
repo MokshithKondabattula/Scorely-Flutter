@@ -1,9 +1,8 @@
 name: Scorely Release
 
 on:
-  push:
-    tags:
-      - 'v*.*.*'
+  release:
+    types: [published]  
 
 jobs:
   release:
@@ -24,7 +23,7 @@ jobs:
       - name: Build APK
         run: flutter build apk --release
 
-      - name: Upload APK to GitHub Release
+      - name: Upload APK to existing GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           files: build/app/outputs/flutter-apk/app-release.apk
