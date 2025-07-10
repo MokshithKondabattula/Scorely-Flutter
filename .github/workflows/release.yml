@@ -1,11 +1,11 @@
-name: Scorely Release
+name: Release APK
 
 on:
   release:
-    types: [published]  
+    types: [published]
 
 jobs:
-  release:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,7 +23,7 @@ jobs:
       - name: Build APK
         run: flutter build apk --release
 
-      - name: Upload APK to existing GitHub Release
+      - name: Upload APK to GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           files: build/app/outputs/flutter-apk/app-release.apk
