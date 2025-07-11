@@ -1,3 +1,3 @@
 class Apikey {
-  static const String apikey = 'ca6d9c60-b411-456d-bced-acc4b8fd3d2a';
+  static const String apikey = '4ba30108-a4c6-4ad8-b52b-e33c98a680e7';
 }
